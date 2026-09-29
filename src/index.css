@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@import "./design-system/styles/tokens.css";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-navy: var(--ds-text-primary);
+  --color-navy-muted: var(--ds-text-secondary);
+  --color-canvas: var(--ds-bg-primary);
+  --color-card: var(--ds-surface-default);
+  --color-rg-blue: var(--ds-brand-primary);
+  --color-rg-blue-bright: var(--ds-brand-primary-bright);
+  --color-rg-blue-soft: var(--ds-brand-primary-soft);
+  --color-positive: var(--ds-positive);
+  --color-positive-soft: var(--ds-positive-soft);
+  --color-warning: var(--ds-warning);
+  --color-warning-soft: var(--ds-warning-soft);
+  --color-danger: var(--ds-danger);
+  --color-danger-soft: var(--ds-danger-soft);
+  --color-ai: var(--ds-ai);
+  --color-ai-soft: var(--ds-ai-soft);
+  --color-teal: var(--ds-info);
+  --color-teal-soft: var(--ds-info-soft);
+  --color-line: var(--ds-border-default);
+  --font-sans: var(--ds-font-sans);
+  --shadow-card: var(--ds-shadow-md);
+  --shadow-card-hover: var(--ds-shadow-lg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 1280px;
+  background: var(--ds-bg-primary);
+  color: var(--ds-text-primary);
+  font-family: var(--ds-font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a5b70' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px 12px;
+  padding-right: 2rem;
+}
+
+[data-theme='dark'] select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a8b6c8' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+.surface-card {
+  border: none;
+  background: var(--ds-surface-default);
+  box-shadow: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ds-grey-300);
+  border-radius: 8px;
+}
+
+/* Horizontal strip: hide scrollbar until hover / focus-within */
+.scroll-x-hover {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.scroll-x-hover::-webkit-scrollbar {
+  height: 0;
+}
+
+.scroll-x-hover:hover,
+.scroll-x-hover:focus-within {
+  scrollbar-width: thin;
+}
+
+.scroll-x-hover:hover::-webkit-scrollbar,
+.scroll-x-hover:focus-within::-webkit-scrollbar {
+  height: 8px;
+}
