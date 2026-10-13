@@ -81,7 +81,7 @@ export const libraryReports: LibraryReport[] = [
     perspective: 'supply',
     accountType: 'direct',
     scope: 'Brand — 6 properties',
-    period: 'Q2 2026',
+    period: 'Q3 2026',
     status: 'draft',
     generated: '3 Jul 2026',
     region: 'EMEA',
